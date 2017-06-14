@@ -5,7 +5,7 @@ var TodoList = React.createClass({
   render : function(){
     var {todos} = this.props;
 
-    //render function for creating new todo for every item inan array
+    //render function for creating new todo for every item in an array
     var renderTodos = () => {
         return todos.map((todo)=>{
           return(
