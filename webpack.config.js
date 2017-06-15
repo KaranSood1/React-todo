@@ -3,6 +3,7 @@ var path = require('path');
 
 module.exports = {
   entry: [
+      'script!jquery/dist/jquery.min.js',
 './app/app.jsx'
   ],
   externals: {
@@ -17,8 +18,18 @@ module.exports = {
     root: __dirname,
     modulesDirectories: [
       'node_modules',
-      './app/components'
+      './app/components',
+        './app/api'
     ],
+      externals: {
+      jquery: 'jQuery'
+      },
+      plugins: [
+          new webpack.ProvidePlugin({
+              '$': 'jquery',
+              'jQuery': 'jquery'
+          })
+      ],
     alias: {
       applicationStyles: 'app/styles/app.scss'
     },
